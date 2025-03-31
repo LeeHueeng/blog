@@ -1,6 +1,8 @@
 import { ThemeProvider } from "@/@layout/them/ThemProvider";
 import "./globals.css";
 import Navbar from "@/@layout/navbar/Navbar";
+
+import Footer from "@/@layout/footer/footer";
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -8,7 +10,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
+      <html lang="ko" suppressHydrationWarning>
         <head />
         <body className="overflow-x-hidden">
           <ThemeProvider
@@ -19,6 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           >
             <Navbar />
             {children}
+            <Footer />
           </ThemeProvider>
         </body>
       </html>
