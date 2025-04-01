@@ -21,6 +21,7 @@ export default function Write() {
               toolbar: [
                 [{ header: [1, 2, 3, false] }],
                 ["bold", "italic", "underline", "strike"],
+                [{ align: [] }],
                 ["blockquote", "code-block"],
                 [{ list: "ordered" }, { list: "bullet" }],
                 [
@@ -82,7 +83,7 @@ export default function Write() {
             className="p-3 border border-[var(--border)] rounded-md bg-[var(--background)] text-[var(--foreground)]"
           />
           <div className="border border-[var(--border)] rounded-md">
-            <div ref={quillRef} className="h-64" />
+            <div ref={quillRef} className="min-h-[500px]" />
           </div>
           <button
             type="submit"

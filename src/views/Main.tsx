@@ -2,6 +2,7 @@
 
 import PostImgPreview from "@/components/preview/PostImgPreview";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function Main() {
@@ -37,7 +38,9 @@ export default function Main() {
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         {posts.map((post) => (
-          <PostImgPreview key={post.id} postImg={post.img} />
+          <Link href={`/post/${post.id}/${post.id}`} key={post.id}>
+            <PostImgPreview key={post.id} postImg={post.img} />
+          </Link>
         ))}
       </div>
     </InfiniteScroll>
